@@ -1,0 +1,32 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:dp="/hudson/plugins/view/dashboard" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+  <dp:decorate portlet="${it}"> <!-- This is a dashboard view portlet -->
+    <tr><td>
+      <div align="center">
+        <j:set var="weekDay" value="unknown"> </j:set>
+        <tr bgcolor="#A0A0F8" > <!-- Blue table header -->
+          <th>Project</th>
+          <th>Parameters</th>
+          <th>Schedule</th>
+          <th>Server Label</th>
+        </tr>
+        <!-- Iterate over all planned builds -->
+        <j:forEach var="w" items="${it.plannedBuilds}">
+          <j:if test="${weekDay != w.weekDay}">
+            <j:set var="weekDay" value="${w.weekDay}"> </j:set>
+            <tr bgcolor="#60F050"><td>${weekDay}</td><td></td><td></td><td></td></tr>
+          </j:if>
+          <tr bgcolor="${w.bgColour}" >
+            <td><a tooltip="${w.name}" href="${w.url}">${w.name}</a></td>
+            <td tooltip="${w.parameters}">${w.parametersShort}</td>
+            <td>${w.weekDay} ${w.date}</td>
+            <td tooltip="${w.assignedLabel}">${w.assignedLabel}</td>
+          </tr>
+        </j:forEach>
+      </div>
+
+     </td></tr>
+  </dp:decorate>
+</j:jelly>
+
