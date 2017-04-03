@@ -29,24 +29,15 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Vector;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
-import hudson.Extension;
-import hudson.model.Descriptor;
 import hudson.model.Queue;
 import hudson.model.TopLevelItem;
 import hudson.model.View;
 import hudson.model.Queue.Item;
 import hudson.model.Queue.WaitingItem;
 import hudson.plugins.view.dashboard.DashboardPortlet;
-import hudson.triggers.Trigger;
-import hudson.util.FormValidation;
-import hudson.triggers.TimerTrigger;
 import jenkins.model.Jenkins;
 import jenkins.model.ParameterizedJobMixIn;
-import net.sf.json.JSONObject;
 
 import org.kohsuke.stapler.export.Exported;
 import org.kohsuke.stapler.export.ExportedBean;
@@ -54,9 +45,7 @@ import org.kohsuke.stapler.export.ExportedBean;
 import enea.jenkins.scheduledisplay.FutureBuild.DescriptorImpl;
 
 import org.kohsuke.stapler.DataBoundConstructor;
-import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.Stapler;
-import org.kohsuke.stapler.StaplerRequest;
 
 /**
  * @author svlu
@@ -64,7 +53,6 @@ import org.kohsuke.stapler.StaplerRequest;
  */
 @ExportedBean(defaultVisibility = 2)
 public class SchedulePortlet extends DashboardPortlet {
-	public String debugMessage = "Hello world!";
 
 	/**
 	 * @param name
