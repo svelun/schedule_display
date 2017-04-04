@@ -38,10 +38,11 @@ SOFTWARE.
 		<jenkins.version>1.580.2</jenkins.version>
 		<java.level>7</java.level>
 	</properties>
-	<!-- <scm> <connection>scm:git:ssh://github.com/jenkinsci/NNNNNN.git</connection> 
+	<!--  <scm> <connection>scm:git:ssh://github.com/jenkinsci/NNNNNN.git</connection> 
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/NNNNNNNNN.git</developerConnection> 
 		<url>https://github.com/jenkinsci/NNNNNNNNNN.git</url> <tag>HEAD</tag> 
-		</scm> <url>https://wiki.jenkins-ci.org/display/JENKINS/NNNNNNNNNNN</url> -->
+	</scm> -->
+	<!-- <url>https://wiki.jenkins-ci.org/display/JENKINS/NNNNNNNNNNN</url> -->
 
 	<developers>
 		<developer>
